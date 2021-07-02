@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Welcome to Glitch </title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js "></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+
+    <link rel="stylesheet" href="/static/stylemain.css">
+    <script src="/static/scripts.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Glitch </h3>
+            </div>
+            <ul class="list-unstyled components">
+                <p>Because Problems occur sometimes.🐈‍⬛🐈‍⬛
+                </p>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+
+                <li>
+                    <a href="/setup" button id="btnStart">Setup</a>
+
+                </li>
+
+            </ul>
+
+
+            <ul class="list-unstyled CTAs">
+
+                <li><a href="/logout" class="article">Logout</a></li>
+            </ul>
+        </nav>
+        <div id="content">
+            <div class="container">
+                <h1>Experiments ⚗️ </h1>
+                <br><br><br>
+
+                <div class="row " <div class="col ">
+                    <table class="table table-striped " class="main ">
+
+                        <thead>
+                            <tr>
+                                <th scope="col "> </th>
+                                <th scope="col ">Name</th>
+                                <th scope="col ">Description</th>
+                                <th scope="col ">Command</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row ">CPU Bound - Discount Service</th>
+                                <td>Introduces 100% CPU for Discount</td>
+                                <td><code>nproc | xargs seq | xargs -n1 -P4 md5sum /dev/zero</code></td>
+                                <td><button type="button " class="btn btn-outline-danger-lg " onclick="api( 'cpudiscount', 'execute') ">  ✅  </button> <button type="button" class="btn btn-outline-danger-lg " onclick="api('cpudiscount', 'cancel') ">  🚫 </button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row ">List</th>
+                                <td>List</td>
+                                <td><code>ls</code></td>
+                                <td><button type="button " class="btn btn-outline-danger=-lg " onclick="api( 'ls') ">  ✅  </button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row ">Get Pods3</th>
+                                <td>Gets all Pods</td>
+                                <td><code>kubectl get pods</code></td>
+                                <td><button type="button " class="btn btn-outline-danger-lg " onclick="api( 'getpods3') ">  ✅  </button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row ">Get Pods4</th>
+                                <td>Gets all Pods</td>
+                                <td><code>kubectl get pods</code></td>
+                                <td><button type="button " class="btn btn-outline-danger-lg " onclick="api( 'getpods4') ">  ✅  </button></td>
+                            </tr>
+                            <tr>
+                                <th scope="row ">Give me Chaos 🐒 </th>
+                                <td>Random issue.🤷 ☠️ </td>
+                                <td><code>kubectl get pods</code></td>
+                                <td><button type="button " class="btn btn-outline-danger-lg " onclick="api( 'getpods5') ">  ✅  </button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="cli " id="feedback"> Click an item for problem injection </samp>
+                    </div>
+
+                    <script type="text/javascript ">
+                        $(document).ready(function() {
+                            $('#sidebarCollapse').on('click', function() {
+                                $('#sidebar').toggleClass('active');
+                            });
+                        });
+                    </script>
+
+                    <div class="modal fade " id="formModal " tabindex="-1 " role="dialog " aria-labelledby="formModalLabel " aria-hidden="true ">
+                        <div class="modal-dialog modal-dialog-centered " role="document ">
+                            <div class="modal-content ">
+                                <div class="modal-header ">
+                                    <h3 class="modal-title " id="formModalLabel ">Glitch Configuration 🐈‍⬛🐈‍⬛</h3>
+                                    <button type="button " class="close " data-dismiss="modal " aria-label="close ">
+                <span aria-hidden="true ">&times;</span>
+                </button>
+                                </div>
+                                <form id="formAwesome ">
+                                    <div class="modal-body ">
+                                        <div class="form-group row ">
+                                            <label for="firstName " class="col-sm-6 col-form-label ">
+                            Email
+                        </label>
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " id="firstName " placeholder="John " required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row ">
+                                            <label for="lastName " class="col-sm-6 col-form-label ">
+                            Password
+                        </label>
+                                            <div class="col-sm-6 ">
+                                                <input type="text " class="form-control " id="lastName " placeholder="Doe " required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row ">
+                                            <label for="email " class="col-sm-6 col-form-label ">
+                            K8s cluster
+                        </label>
+                                            <div class="col-sm-6 ">
+                                                <input type="email " class="form-control " id="email " placeholder="john.doe@email.com " required>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row ">
+                                            <label for="awesomeness " class="col-sm-6 col-form-label ">
+                            Admin User
+                        </label>
+                                            <div class="col-sm-6 ">
+                                                <select class="form-control " id="awesomeness ">
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-check ">
+                                            <input class="form-check-input " type="checkbox " value=" " id="awesomeCheck " required>
+                                            <label class="form-check-label " for="awesomeCheck ">
+                            I confirm that I am an awesome person.
+                        </label>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer ">
+                                        <button type="button " class="btn btn-secondary " data-dismiss="modal ">Close</button>
+                                        <button type="submit " class="btn btn-primary ">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        var form = document.getElementById("formAwesome ");
+                        form.addEventListener("submit ", onSubmitForm);
+
+                        function onSubmitForm(e) {
+                            e.preventDefault();
+                            $('#formModal').modal('hide');
+                            $('#btnStart').hide();
+                            $('#message').show();
+                        }
+                    </script>
+
+
+</body>
+
+</html>
